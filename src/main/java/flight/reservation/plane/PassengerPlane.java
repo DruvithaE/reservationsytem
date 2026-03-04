@@ -1,11 +1,11 @@
 package flight.reservation.plane;
 
-public class PassengerPlane implements Aircraft {
-    
+public class PassengerPlane {
+
     public String model;
     public int passengerCapacity;
     public int crewCapacity;
-    
+
     public PassengerPlane(String model) {
         this.model = model;
         switch (model) {
@@ -26,29 +26,8 @@ public class PassengerPlane implements Aircraft {
                 crewCapacity = 3;
                 break;
             default:
-                throw new IllegalArgumentException(
-                    String.format("Model type '%s' is not recognized", model)
-                );
+                throw new IllegalArgumentException(String.format("Model type '%s' is not recognized", model));
         }
     }
-    
-    @Override
-    public String getModel() {
-        return model;
-    }
-    
-    @Override
-    public int getPassengerCapacity() {
-        return passengerCapacity;
-    }
-    
-    @Override
-    public int getCrewCapacity() {
-        return crewCapacity;
-    }
-    
-    @Override
-    public AircraftType getAircraftType() {
-        return AircraftType.PASSENGER_PLANE;
-    }
+
 }
